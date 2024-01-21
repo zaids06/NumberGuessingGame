@@ -58,11 +58,13 @@ document.querySelector('.check').addEventListener('click', function () {
       'Better luck next time 🤠';
   }
 });
+
 document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.message').textContent = 'Start guessing...';
   score = 20;
   res = Math.trunc(Math.random() * 20) + 1;
   document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = '';
   document.querySelector('.label-score').textContent = '💯 Score: ' + score;
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
