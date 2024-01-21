@@ -2,13 +2,14 @@
 let res = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let hS = 0;
+
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   const diff = guess - res;
   //loop
   if (score > 0) {
     //check number is out of the limits
-    if (guess == 0 || guess > 20 || guess < 1)
+    if (guess === 0 || guess > 20 || guess < 1)
       document.querySelector('.message').textContent = '🚫 Wrong Choice';
     //valid
     else {
@@ -56,4 +57,13 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.label-score').textContent =
       'Better luck next time 🤠';
   }
+});
+document.querySelector('.again').addEventListener('click', function () {
+  document.querySelector('.message').textContent = 'Start guessing...';
+  score = 20;
+  res = Math.trunc(Math.random() * 20) + 1;
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.label-score').textContent = '💯 Score: ' + score;
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
 });
